@@ -29,6 +29,16 @@ app.get('/usuarios/', (req, res) => {
 })
 
 
+// 10. Crear el endpoint que permita obtener el total del stock actual de productos, la sumatoria de los precios individuales.
+app.get('/productos/totalStock', (req, res) => {
+  try {
+      let totalStock = datos.productos.reduce((total, producto) => total + producto.precio, 0)
+      res.status(200).json({"totalStock": totalStock})
+  } catch (error) {
+      res.status(204).json({"message": error})
+  }
+})
+
 // Definición de la ruta /productos/
 
 app.get('/productos/', (req, res) =>{
@@ -131,15 +141,6 @@ app.delete('/productos/:id', (req, res) => {
 })
 
 
-// 10. Crear el endpoint que permita obtener el total del stock actual de productos, la sumatoria de los precios individuales.
-app.get('/productos/totalStock', (req, res) => {
-  try {
-      let totalStock = datos.productos.reduce((total, producto) => total + producto.precio, 0)
-      res.status(200).json({"totalStock": totalStock})
-  } catch (error) {
-      res.status(204).json({"message": error})
-  }
-})
 
 
 
