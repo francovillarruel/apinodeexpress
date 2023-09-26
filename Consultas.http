@@ -1,0 +1,38 @@
+### 1. Crear el endpoint ‘/usuarios/’, que devuelva el listado completo de usuarios.
+GET http://localhost:1234/usuarios/
+
+### 2.Crear el endpoint ‘/usuarios/id’ que devuelva los datos de un usuario en particular consignado porsu número de id.
+GET http://localhost:1234/usuarios/3
+
+###3. Crear el endpoint ‘/usuarios/’ que permita guardar un nuevo usuario.
+POST http://localhost:1234/usuarios/
+Content-Type: application/json
+
+{
+    "nombre": "Franco VIllarruel",
+    "telefono": "264-4-447017"
+}
+###4. Crear el endpoint ‘/usuarios/id’ que permita modificar algún atributo de un usuario.
+PATCH http://localhost:1234/usuarios/4
+Content-Type: application/json
+
+{
+    "nombre": "Nombre Nuevo"
+}
+###5. Crear el endpoint ‘/usuarios/id’ que permita borrar un usuario de los datos.
+DELETE http://localhost:1234/usuarios/1
+
+###6. Crear el endpoint que permita obtener el precio de un producto que se indica por id.
+GET http://localhost:1234/productos/precio/2
+
+###7. Crear el endpoint que permita obtener el nombre de un producto que se indica por id.
+GET http://localhost:1234/productos/nombre/3
+
+###8. Crear el endpoint que permita obtener el teléfono de un usuario que se indica por id.
+GET http://localhost:1234/usuarios/telefono/2
+
+###9. Crear el endpoint que permita obtener el nombre de un usuario que se indica por id.
+GET http://localhost:1234/usuarios/nombre/3
+
+###10. Crear el endpoint que permita obtener el total del stock actual de productos, la sumatoria de los precios individuales.
+GET http://localhost:1234/productos/totalStock
